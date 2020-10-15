@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300&family=Nanum+Myeongjo&family=Playfair+Display&display=swap');
+
+body {
+  font-family: 'Nanum Myeongjo', 'Playfair Display', 'Times New Roman', Times, serif !important;
+  font-size: 120%; 
+}
+
+.card-title {
+  font-family: 'Cormorant';
+  font-weight: 300;
+}
+
+.post-date {
+  font-size: 80%;
+}
+
+.article .article-title {
+  font-size: 52px;
+}
+
+.post-interactions {
+  font-size: 14px;
+}
+
+.post-interactions i {
+  font-size: 34px;
+}
+
+.post-interactions p:nth-child(2) {
+  margin-left: 20px;
+}
+
+.article-after .post-comment .comment-control .current-user-info {
+  font-size: 80%;
+}
+
+.article-after .post-comment .comment-control .current-user-info i {
+  font-size: 200%;
+}
+
+.article-after .comment-section .current-user-info {
+  font-size: 80%;
+}
+
+.article-after .comment-section .current-user-info i {
+  font-size: 200%;
+}
+
+.article-after .comment-section .comment-comment {
+  font-size: 85%;
+}
