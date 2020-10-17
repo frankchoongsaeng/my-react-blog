@@ -1,3 +1,20 @@
+* {
+  transition: background-color 0.2s linear;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.app-dark {
+  background-color: rgb(12, 17, 29) !important;
+  color: #ddd
+}
+
+.btn-link, .link, a {
+  cursor: pointer;
+}
+
 .blog-card .card-text {
   max-height: 100px;
 }
@@ -16,7 +33,7 @@
 }
 
 .article-header {
-  margin-top: 120px;
+  padding-top: 120px;
 }
 
 .article-header .article-header-left {
@@ -111,4 +128,22 @@
 
 .article-after .comment-section .comment-comment {
   padding-bottom: 30px;
+}
+
+.login {
+  background-color: #ddd;
+  height: 100vh;
+}
+
+.login .card {
+  min-width: 400px;
+}
+
+.login .card .text-smaller {
+  font-size: 80%;
+}
+
+.login .login-logo {
+  width: 100px;
+  margin: 0px auto;
 }

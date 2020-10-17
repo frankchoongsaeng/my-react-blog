@@ -1,11 +1,12 @@
 import React from 'react';
-import Article from './Components/Article';
+import ThemeProvider from './Components/ThemeProvider';
+import Router from './Components/Router';
 
 function App() {
   return (
-    <div>
-      <Article />
-    </div>
+    <ThemeProvider >
+      <Router />
+    </ThemeProvider>
   );
 }
 

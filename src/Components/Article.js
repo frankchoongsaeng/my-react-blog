@@ -1,9 +1,29 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import Footer from './Footer';
 import NavBar from './NavBar';
 import bgImg from '../Images/placeholder.jpg';
+import { useScrollToTop } from '../hooks';
 
 function Article() {
+
+  const history = useHistory();
+
+  useScrollToTop();
+
+  function handleLinks(linkTo = null) {
+    if(linkTo) {
+      switch(linkTo) {
+        case "back":
+          history.goBack();
+          break;
+        default:
+          history.push(linkTo)
+          break;
+      }
+    }
+  }
+
   return (
     
     <>
@@ -11,7 +31,7 @@ function Article() {
       <div className="row article-header mx-0">
         <div className="col-md-6 article-header-left" style={{height: "1000px"}} >
           <div className="article-header-info-area">
-            <p className="back"><i class="ri-arrow-left-line"></i> back</p>
+            <p className="back link"><button className="btn btn-link" onClick={() => handleLinks("back")}><i className="ri-arrow-left-line"></i> back</button></p>
             <h1 className="article-title">
               This guy really won't shut up<span className="text-muted">Our "CEO" shares some thoughts in four new interviews</span>
             </h1>
@@ -42,19 +62,19 @@ function Article() {
       <div className="container article-after">
         {/* Users can Upvote and downvote a post here */}
         <div className="post-interactions d-flex">
-          <p><i class="ri-arrow-up-circle-line"></i> Upvote</p>
-          <p><i class="ri-arrow-down-circle-line"></i> Downvote</p>
+          <p><i className="ri-arrow-up-circle-line"></i> Upvote</p>
+          <p><i className="ri-arrow-down-circle-line"></i> Downvote</p>
         </div>
 
         {/* Section for user to input a new comment */}
         <div className="post-comment mt-5">
           <form>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Leave a comment</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="here's  what I have to say..."></textarea>
+            <div className="form-group">
+              <label htmlFor="exampleFormControlTextarea1">Leave a comment</label>
+              <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="here's  what I have to say..."></textarea>
             </div>
             <div className="comment-control">
-              <p className="current-user-info"><i class='bx bxs-user-circle' ></i> Anonymous</p>
+              <p className="current-user-info"><i className='bx bxs-user-circle' ></i> Anonymous</p>
               <a className="btn btn-success" href="google.com">Comment</a>
             </div>
           </form>
@@ -64,13 +84,13 @@ function Article() {
         <div className="comment-section mt-5 mb-5 pt-5">
           <p>COMMENTS</p>
           <div className="comment">
-            <p className="current-user-info"><i class='bx bxs-user-circle' ></i> Anonymous</p>
+            <p className="current-user-info"><i className='bx bxs-user-circle' ></i> Anonymous</p>
             <div className="comment-comment" >
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
             </div>
           </div>
           <div className="comment">
-            <p className="current-user-info"><i class='bx bxs-user-circle' ></i> Anonymous</p>
+            <p className="current-user-info"><i className='bx bxs-user-circle' ></i> Anonymous</p>
             <div className="comment-comment" >
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
             </div>

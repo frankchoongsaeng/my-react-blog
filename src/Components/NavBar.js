@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import ThemeButton from './ThemeButton';
+import { Theme } from './ThemeProvider';
 
 function NavBar(props) {
+
+  const currentTheme = useContext(Theme)[0];
+
   return(
-    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav className={`navbar navbar-expand-lg navbar-${currentTheme} bg-${currentTheme} fixed-top`}>
       <div className="container">
-        <a className="navbar-brand" href="google.com">Navbar</a>
+        <Link to="/"><p className="navbar-brand">Navbar</p></Link>
         
         <div className="flex-1 d-flex justify-content-end">
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="google.comnavbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,16 +19,13 @@ function NavBar(props) {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item active">
-                <a className="nav-link" href="google.com">Home <span className="sr-only">(current)</span></a>
+                <Link className="nav-link" to="/home">Home <span className="sr-only">(current)</span></Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="google.com">Features</a>
+                <Link className="nav-link" to="/login">Sign In</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="google.com">Pricing</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href="google.com" tabIndex="-1" aria-disabled="true">Disabled</a>
+                <ThemeButton />
               </li>
             </ul>
           </div>
