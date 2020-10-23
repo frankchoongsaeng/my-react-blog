@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import {BrowserRouter as Routes, Switch, Route} from 'react-router-dom';
 import { Theme } from './ThemeProvider';
-import Home from './Home';
-import Login from './Login';
-import Article from './Article';
+import Home from '../Pages/Home';
+import Login from '../Pages/Login';
+import Article from '../Pages/Article';
+import NewPost from '../Pages/NewPost';
 
 function Router(props) {
 
@@ -13,6 +14,7 @@ function Router(props) {
       {props.children}
       <Routes>
         <Switch>
+          <Route path="/new-post" component={NewPost} />
           <Route path="/article" component={Article} />
           <Route path="/login" component={Login} />
           <Route path="/home" component={Home} />

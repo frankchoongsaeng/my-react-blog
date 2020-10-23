@@ -6,12 +6,16 @@ a {
   text-decoration: none !important;
 }
 
+.full-vh {
+  height: 100vh;
+}
+
 .app-dark {
   background-color: rgb(12, 17, 29) !important;
   color: #ddd
 }
 
-.btn-link, .link, a {
+.btn-link, .link, a, .nav-link {
   cursor: pointer;
 }
 
@@ -27,9 +31,16 @@ a {
 .blog-card-img {
   height: 400px;
   background-image: url(./Images/blogImage.jpg);
-  background-size: cover;
+  background-size: 40em;
   background-position: top center;
   background-repeat: no-repeat;
+  transition: all 0.2s linear;
+}
+
+.blog-card .blog-card-img:hover {
+  
+  /* transition: background-size 0.2s linear; */
+  background-size: 41em;
 }
 
 .article-header {
@@ -146,4 +157,15 @@ a {
 .login .login-logo {
   width: 100px;
   margin: 0px auto;
+}
+
+.btn-group {
+  margin-left: 10px;
+  position: relative;
+  bottom: -5px;
+}
+
+.sign-up form {
+  max-width: 800px;
+  margin: auto
 }

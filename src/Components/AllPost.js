@@ -1,5 +1,6 @@
 import React from 'react';
 import ArticleCard from './ArticleCard';
+import { getAllPosts } from '../posts.js';
 
 function AllPost() {
   return (
@@ -7,12 +8,9 @@ function AllPost() {
       <div className="spacer py-5 my-5"></div>
 
       <div className="row">
-        <ArticleCard />
-        <ArticleCard />
-        <ArticleCard />
-        <ArticleCard />
-        <ArticleCard />
-        <ArticleCard />
+        {
+          getAllPosts().map( (post, index) => <ArticleCard key={post.title + "," + post.date} post={post} postId={index}/> )
+        }
       </div>
 
       <div className="spacer py-5 my-5"></div>
