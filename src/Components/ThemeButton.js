@@ -5,12 +5,23 @@ function ThemeButton(props) {
 
   const themeContext = useContext(Theme);
 
-  function changeTheme() {
-    themeContext[1](themeContext[0] === "light" ? "dark" : "light");
+  function setLightTheme() {
+    themeContext[1]("light");
+  } 
+
+  function setDarkTheme() {
+    themeContext[1]("dark");
   }
 
   return (
-    <button onClick={changeTheme}>Change Theme</button>
+    <div className="btn-group btn-group-toggle" data-toggle="buttons">
+      <label className="toggle-btn btn btn-secondary active shadow-none" onClick={setLightTheme}>
+        <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked />Light
+      </label>
+      <label className="toggle-btn btn btn-secondary shadow-none" onClick={setDarkTheme}>
+        <input type="radio" name="options" id="option2" autoComplete="off" />Dark
+      </label>
+    </div>
   );
 }
 
