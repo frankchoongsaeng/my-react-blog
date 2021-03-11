@@ -59,11 +59,10 @@ function NavBar(props) {
 
           {/* mobile navbar */}
           <div ref={mNavOverlay} className="mobile-nav invisible" id="mobileNav">
-            <ul className="navbar-nav position-fixed" style={{
+            <ul className={`navbar-nav position-fixed bg-${currentTheme}`} style={{
               height: "auto",
               top: 0,
               right: 0,
-              background: "white",
               width: "100vw"
             }}>
 
